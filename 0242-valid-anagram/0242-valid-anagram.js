@@ -3,8 +3,9 @@
  * @param {string} t
  * @return {boolean}
  */
-// Big O( s + t)
-// Memory (s + t)
+
+// Big O( s + t) , O(n)
+// Memory (s + t), O(n)
 var isAnagram = function(s, t) {
     if (s.length !== t.length){
         return false
@@ -27,7 +28,8 @@ var isAnagram = function(s, t) {
             countT[t[j]] += 1
         }
     }
-    for (let key in countS) {
+    // Big O of (O(n)) time since it is just a for loop, which is linear
+    for (let key in countT) {
         if (countS[key] !== countT[key]) {
             return false;
         }
