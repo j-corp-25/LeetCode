@@ -7,7 +7,9 @@ class Solution:
         for windowEnd in range(len(s)):
             endChar = s[windowEnd]
 
-            charFreq[endChar] = charFreq.get(endChar, 0) + 1
+            if endChar not in charFreq:
+                charFreq[endChar] = 0  
+            charFreq[endChar] += 1 
 
             while charFreq[endChar] > 1:
                 startChar = s[windowStart]
