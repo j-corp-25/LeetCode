@@ -1,27 +1,18 @@
 
 class Solution:
     def findMaxAverage(self, nums: List[int], k: int) -> float:
-        window_sum = 0
-    
-
-        max_average = float('-inf')
-
+        windowSum = 0
+        maxSum = float('-inf')
         windowStart = 0
-    
-
+        
         for windowEnd in range(len(nums)):
-            window_sum += nums[windowEnd]
-        
-        # Slide the window when we've reached size 'k'
+            windowSum += nums[windowEnd]
+            
             if windowEnd >= k - 1:
-        
-                max_average = max(max_average, window_sum / k)
-            
-
-                window_sum -= nums[windowStart]
-    
+                
+                maxSum = max(maxSum, (windowSum/k))
+                windowSum -= nums[windowStart]
                 windowStart += 1
+                
+        return maxSum
             
-        return max_average
-
-        
