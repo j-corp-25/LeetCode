@@ -1,9 +1,9 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        freq_map = {}
         if len(s) != len(t):
             return False
         
-        freq_map = {}
         for i in range(len(s)):
             if s[i] in freq_map:
                 freq_map[s[i]] += 1
