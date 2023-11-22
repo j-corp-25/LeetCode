@@ -8,9 +8,9 @@ class Solution:
             else:
                 my_map[num] += 1
         
-        for char in my_map:
-            if my_map[char] > (len(nums) // 2):
-                return char
+        for num in my_map:
+            if my_map[num] > (len(nums) // 2):
+                return num
             
         return -1
         
