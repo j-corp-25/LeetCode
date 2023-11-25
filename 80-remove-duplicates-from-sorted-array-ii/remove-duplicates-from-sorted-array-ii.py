@@ -8,12 +8,8 @@ class Solution:
                 count += 1
             else:
                 count = 1
-            
+                
             if count <= 2:
                 nums[k] = nums[i]
-                k+= 1
+                k += 1
         return k
-
-
-
-        
