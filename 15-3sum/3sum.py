@@ -1,32 +1,29 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+        # [-4,-1,-1,0,1,2]
 
-        nums.sort() # We sort nums first to more easily find duplicate numbers
-        triplets = [] # We will store all the valid triplets in here
-        
-        for i in range(len(nums)):
-            if i > 0 and nums[i - 1] == nums[i]:
-                continue # Skip duplicates
+        # we need "three" pointers, a left and right to check the solution
+        for i, a in enumerate(nums):
+            if i > 0 and a == nums[i - 1]:
+                continue
                 
-            left = i + 1
-            right = len(nums) - 1
-            
-            while left < right:
-                curSum = nums[i] + nums[left] + nums[right]
-                if curSum == 0:
-                    triplets.append([nums[i], nums[left], nums[right]])
-                    left += 1
-                    right -= 1
-                    
-                    # Skip all duplicates on left side
-                    while left < right and nums[left - 1] == nums[left]:
-                        left += 1
-                    
-                    # Skip all duplicates on right side
-                    while left < right and nums[right + 1] == nums[right]:
-                        right -= 1
-                elif curSum < 0:
-                    left += 1 # Our sum is too small, so we try to increase the sum
+            l,r = i + 1, len(nums) - 1
+            while l < r:
+                three_sum = a + nums[l] + nums[r]
+                if three_sum > 0:
+                    r -= 1
+                elif three_sum < 0:
+                    l += 1
                 else:
-                    right -= 1 # Our sum is too big, so we try to decrease the sum
-        return triplets
+                    res.append([a,nums[l],nums[r]])
+                    l += 1
+                    while l < r and nums[l] == nums[l - 1]:
+                        l += 1
+        return res
+
+
+
+        
+
