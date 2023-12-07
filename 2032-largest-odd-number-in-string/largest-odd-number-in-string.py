@@ -1,7 +1,10 @@
 class Solution:
     def largestOddNumber(self, num: str) -> str:
-        for i in range(len(num) - 1, -1, -1) :
-            if num[i] in {'1','3','5','7','9'} :
-                return num[:i+1]
-        return ''
+        i = len(num) - 1
+
+        while i >= 0:
+            if int(num[i]) % 2:
+                return num[:i + 1]
+            i -= 1
+        return ""
         
