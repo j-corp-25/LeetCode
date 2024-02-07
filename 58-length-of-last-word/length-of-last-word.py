@@ -3,7 +3,7 @@ class Solution:
         #input string of words with spaces
         # output is integer length of the last word
         # use an array to store the words
-        return len(s.strip().split(" ")[-1])
+        return len(s.strip().split()[-1])
 
     
        
