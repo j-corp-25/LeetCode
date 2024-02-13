@@ -1,16 +1,19 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        left = 0
-        right = 1
+        # input is an array
         maxProfit = 0
+        l = 0 #buy
+        r = 1 #sell
 
-        while right <= len(prices) - 1:
-            currentProfit = prices[right] - prices[left]
-            if currentProfit > maxProfit:
-                maxProfit = currentProfit
-            
-            if prices[right] < prices[left]:
-                left = right
-            right += 1
+        while r <= len(prices) - 1:
+            currentProfit = prices[r] - prices[l]
+            if prices[r] > prices[l]: # check if you can sell it more than you bought it more
+                maxProfit = max(maxProfit,currentProfit)
+            else:
+                l = r
+            r += 1
         return maxProfit
+  
+
+
         
