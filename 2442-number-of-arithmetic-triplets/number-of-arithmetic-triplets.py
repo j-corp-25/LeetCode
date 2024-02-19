@@ -1,9 +1,8 @@
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        seen = set()
-        res = 0
-        for n in nums:
-            seen.add(n)
-            if n - diff in seen and n - 2*diff in seen:
-                res += 1
-        return res
+        s = set(nums)
+        count = 0
+        for num in nums:
+            if (num + diff) in s and (num + 2*diff) in s:
+                count += 1
+        return count
