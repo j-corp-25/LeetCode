@@ -7,7 +7,6 @@ class Solution:
         for num in nums:
             # iterate through each number in the nums array
             if (num + diff) in s and (num + 2*diff) in s:
-                # here we check if 1 + 2 = 3 is in the set which it is. then we check 1 + 2*2 = 5. 
-                # 
+                # here we check if (current num)1 + 2 = 3 is in the set which it is. then we check 1 + 2*2 = 5. which is also in the set we then increment count
                 count += 1
         return count
