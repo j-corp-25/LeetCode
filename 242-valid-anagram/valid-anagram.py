@@ -1,23 +1,22 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        freq_map = {}
+        # two inputs. s string and t string
+        # return true if every character is used atleast once, otherwise return false
+        # I can use two hashes and then compare their key value pairs if they are equal
+
+        countS, countT = {},{}
+
         if len(s) != len(t):
             return False
         
         for i in range(len(s)):
-            if s[i] in freq_map:
-                freq_map[s[i]] += 1
-            else:
-                freq_map[s[i]] = 1
+            countS[s[i]] = countS.get(s[i],0) + 1
+            countT[t[i]] = countT.get(t[i],0) + 1
 
-            if t[i] in freq_map:
-                freq_map[t[i]] -= 1
-            else:
-                freq_map[t[i]] = -1
-
-        for char in freq_map:
-            if freq_map[char] != 0:
+        for key in countS:
+            if countS[key] != countT.get(key,0):
                 return False
-        
         return True
+
+        
         
