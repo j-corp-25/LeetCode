@@ -1,10 +1,12 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
-        # sort the algorithm
-        nums.sort()
-        # get the last element and the element before the last with two pointers
-        r = len(nums) - 1
-        l = r - 1
-        return ((nums[r] - 1) * (nums[l] - 1))
+        max1,max2 = 0,0
+        for num in nums:
+            if num > max1:
+                max2 = max1
+                max1 = num
+            elif num > max2:
+                max2 = num
+        return (max1 - 1) * (max2 - 1)
 
         
