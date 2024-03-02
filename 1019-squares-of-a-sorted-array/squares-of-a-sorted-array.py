@@ -1,9 +1,10 @@
 class Solution:
     def sortedSquares(self, nums: List[int]) -> List[int]:
-        Myarray = []
-        for i in range(len(nums)):
-            Myarray.append(nums[i] * nums[i])
-        Myarray.sort()
-        return Myarray
+        
+        new_Array = [(x * x) for x in nums]
+        return sorted(new_Array)
+        
+        
+
 
         
