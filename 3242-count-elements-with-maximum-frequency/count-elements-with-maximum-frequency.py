@@ -7,9 +7,9 @@ class Solution:
             else:
                 myDict[num] = 1
             
-            freqCount = max(myDict.values())
+        freqCount = max(myDict.values())
 
-            maxFreq = sum(1 for x in myDict.values() if freqCount == x)
+        maxFreq = sum(1 for x in myDict.values() if freqCount == x)
 
         return maxFreq * freqCount
 
