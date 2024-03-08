@@ -1,22 +1,19 @@
-from typing import List
-
 class Solution:
     def maxFrequencyElements(self, nums: List[int]) -> int:
-        M = {}
-        maxFreq = 0
-
-        # Iterate through the list and populate the dictionary
+        freqDict = {}
+    
+      
         for num in nums:
-            if num in M:
-                M[num] += 1
+            if num in freqDict:
+                freqDict[num] += 1
             else:
-                M[num] = 1
-            maxFreq = max(maxFreq, M[num])
+                freqDict[num] = 1
+        
+       
+        maxFreq = max(freqDict.values())
+        
+        
+        maxFreqCount = sum(1 for freq in freqDict.values() if freq == maxFreq)
+        
 
-        res = 0
-        # Iterate through the dictionary to find elements with frequency equal to maxFreq
-        for key, value in M.items():
-            if value == maxFreq:
-                res += value
-
-        return res
+        return maxFreq * maxFreqCount
