@@ -4,6 +4,8 @@ class Solution:
         nums.sort()
 
         for i, num in enumerate(nums):
+            if num > 0 :
+                break
             if i > 0 and num == nums[i - 1]:
                 continue
             left_p = i + 1
