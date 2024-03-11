@@ -1,28 +1,23 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+        triplets = []
         nums.sort()
-        
-        newArray = []
-        for i, a in  enumerate(nums):
-            if i > 0 and a == nums[i - 1]:
+
+        for i, num in enumerate(nums):
+            if i > 0 and num == nums[i - 1]:
                 continue
-            left_pointer, right_pointer = i + 1, len(nums) - 1
-            while left_pointer < right_pointer:
-                threeSum = a + nums[left_pointer] + nums[right_pointer]
-                if threeSum > 0:
-                    right_pointer -= 1
-                elif threeSum < 0:
-                    left_pointer += 1
+            left_p = i + 1
+            right_p = len(nums) - 1
+            while left_p < right_p:
+                threesum = num + nums[left_p] + nums[right_p]
+
+                if threesum > 0:
+                    right_p -= 1
+                elif threesum < 0:
+                    left_p += 1
                 else:
-                    newArray.append([a,nums[left_pointer],nums[right_pointer]])
-                    left_pointer += 1
-                    while nums[left_pointer] == nums[left_pointer - 1] and left_pointer < right_pointer:
-                        left_pointer += 1
-        return newArray
-
-
-
-
-
-
-        
+                    triplets.append([num,nums[left_p], nums[right_p]])
+                    left_p += 1
+                    while (left_p < right_p and nums[left_p] == nums[left_p - 1]):
+                        left_p += 1
+        return triplets
