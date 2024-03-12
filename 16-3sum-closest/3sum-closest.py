@@ -7,8 +7,8 @@ class Solution:
             left_p = i + 1
             right_p = len(nums) - 1
             # small optimization to break early once i reaches the end before right pointer
-            if i == len(nums) - 2:
-                break
+            # if i == len(nums) - 2:
+            #     break
 
             while left_p < right_p:
                 currentSum = num + nums[left_p] + nums[right_p]
