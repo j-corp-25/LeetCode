@@ -6,9 +6,9 @@ class Solution:
         for i, num in enumerate(nums):
             left_p = i + 1
             right_p = len(nums) - 1
+            if i == len(nums) - 2:
+                break
 
-            
-                
             while left_p < right_p:
                 currentSum = num + nums[left_p] + nums[right_p]
                 if currentSum == target:
