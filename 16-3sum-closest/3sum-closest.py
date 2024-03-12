@@ -6,6 +6,7 @@ class Solution:
         for i, num in enumerate(nums):
             left_p = i + 1
             right_p = len(nums) - 1
+            # small optimization to break early once i reaches the end before right pointer
             if i == len(nums) - 2:
                 break
 
