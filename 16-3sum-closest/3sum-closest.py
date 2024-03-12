@@ -4,8 +4,6 @@ class Solution:
         minDiffer = math.inf
 
         for i, num in enumerate(nums):
-            if i > 0 and num == nums[i - 1]:
-                continue
             left_p = i + 1
             right_p = len(nums) - 1
                 
