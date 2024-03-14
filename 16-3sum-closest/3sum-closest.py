@@ -12,8 +12,8 @@ class Solution:
 
             while left_p < right_p:
                 currentSum = num + nums[left_p] + nums[right_p]
-                if currentSum == target:
-                    return target
+                # if currentSum == target:
+                #     return target
 
                 if currentSum < target:
                     left_p += 1
