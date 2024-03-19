@@ -5,17 +5,14 @@ class Solution:
         # find the sum of the numbers that are divisible by m  = num2
         # then i will return num1 - num2
         # create a range that i will loop through and i will use n(1, n)
-        num1,num2 = [], []
+        num1=num2=0
         for i in range(1,n + 1):
-            if not i % m == 0:
-                num1.append(i)
+            if i%m == 0:
+                num2 += i
             else:
-                num2.append(i)
-            
-        result1 = sum(num1)
-        result2 = sum(num2)
-        result = (result1 - result2)
-        return result
+                num1 += i
+        return num1-num2
+
 
 
             
