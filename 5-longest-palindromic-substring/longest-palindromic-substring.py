@@ -21,14 +21,27 @@ class Solution:
         #     return s[0]
         # elif len(s) <= 2 and s[0] != s[1]:
         #     return s[0]
+        # def isPalindrome(string):
+        #     left = 0
+        #     right = len(string) - 1
+
+        #     while left < right:
+        #         if string[left] != string[right]:
+        #             return False
+        #         left += 1
+        #         right -= 1
+        #     return True
+        def isPalindrome(string):
+            return string == string[::-1]
     
         for i in range(len(s)):
             for j in range(i, len(s)):
                 substring = s[i: j + 1]
-                if self.isPalindrome(substring) and len(substring) > len(longest):
+                if isPalindrome(substring) and len(substring) > len(longest):
                     longest = substring
         return longest
                     
+
 
                 
 
@@ -69,8 +82,8 @@ class Solution:
 
     # method #2
 
-    def isPalindrome(self, string):
-        return string == string[::-1]
+    # def isPalindrome(self, string):
+    #     return string == string[::-1]
 
     
 
