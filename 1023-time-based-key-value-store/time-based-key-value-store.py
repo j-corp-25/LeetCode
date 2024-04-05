@@ -1,7 +1,7 @@
 class TimeMap:
 
     def __init__(self):
-        self.map = {}
+        self.map =defaultdict(list)
 
 
 
@@ -16,9 +16,9 @@ class TimeMap:
     
     def set(self, key: str, value: str, timestamp: int) -> None:
         #  mymap = defaultdict(list)
-        if key not in self.map:
-            # value = []
-            self.map[key] = []
+        # if key not in self.map:
+        #     # value = []
+        #     self.map[key] = []
         
         # print(self.map)
         # print(self.map[key])
