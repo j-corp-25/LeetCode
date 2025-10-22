@@ -1,4 +1,4 @@
-# Last updated: 10/22/2025, 12:09:45 AM
+# Last updated: 10/22/2025, 12:26:30 AM
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         minLength = float('inf')
@@ -20,4 +20,3 @@ class Solution:
             return 0
         
         return minLength
-                
