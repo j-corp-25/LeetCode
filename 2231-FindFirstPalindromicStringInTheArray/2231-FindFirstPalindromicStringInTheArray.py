@@ -1,0 +1,31 @@
+# Last updated: 10/22/2025, 12:08:54 AM
+class Solution:
+    def firstPalindrome(self, words: List[str]) -> str:
+        
+        
+        # for i in range(len(words)):
+        #     l = 0
+        #     r = len(words[i]) - 1
+        #     while l < r:
+        #         if words[i][l] != words[i][r]:
+        #             break
+        #         l += 1
+        #         r -= 1
+        #     if l >= r:
+        #         return words[i]
+            
+
+            
+        # return ""
+        for word in words:
+            if word == word[::-1]:
+                return word
+        return ""
+                
+                    
+        
+        
+
+
+        
+        
