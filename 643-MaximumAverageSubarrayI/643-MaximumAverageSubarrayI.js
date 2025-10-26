@@ -1,23 +1,23 @@
-// Last updated: 10/22/2025, 12:09:26 AM
+// Last updated: 10/25/2025, 11:20:35 PM
 /**
  * @param {number[]} nums
  * @param {number} k
  * @return {number}
  */
 var findMaxAverage = function(nums, k) {
+    let left = 0
     let currSum = 0
-    let ans = 0
-    for(let i = 0;i < k;i++){
-        currSum+=nums[i]
+    let answer = 0
+    for(let right = 0; right < k ; right++){
+        currSum+=nums[right]
     }
-    
-    ans = currSum / k
-    
-    for(i = k; i < nums.length;i++){
+    answer = currSum/k
+    for(let i = k;i < nums.length; i++){
         currSum+=nums[i]
-        currSum-=nums[i - k]
-        ans = Math.max(ans,currSum/k)
+        currSum-=nums[left]
+        left++
+        answer = Math.max(answer,currSum/k)
     }
-    return ans
+    return answer
     
 };
